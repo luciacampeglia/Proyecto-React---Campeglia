@@ -11,7 +11,7 @@ const Navbar = () =>{
                 <input className="form-control me-2" type="search" placeholder="Filtrar" aria-label="Search"/>
                 <button className="btn btn-outline-light" type="submit">Buscar</button>
             </form>
-            {CartLogo}
+            <CartLogo/>
         </div>
     </nav>
     );

@@ -5,16 +5,22 @@ import products from './Components/Products';
 function App() {
   return (
     
-      <div className="App">
+    <div className="App">
         <Navbar/>
-        <p className='init-message'>Bienvenido a la tienda virtual de Frënda clothes</p>
+        <h3 className='init-message'>Bienvenido a la tienda virtual de Frënda clothes</h3>
+
+      <div className='cards-container'>  
         {products.map((product, i) => (
           <div key={i} className='card'>
-            <div >{product.product}</div>
-            <img src={product.image}/>
+            <a className="link-products" href='link-productos'>
+            <h4>{product.product}</h4>
+            <img className='img-product' src={product.image} alt='productos'/>
+            <h6 >${product.price}</h6>
+            </a>
           </div>
         ))}
-      </div>
+      </div>  
+    </div>
      
   );
 }
