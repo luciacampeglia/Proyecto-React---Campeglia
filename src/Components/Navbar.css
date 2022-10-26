@@ -3,5 +3,18 @@ a{
 }
 .navbar-brand{
     color: aliceblue;
-    text-decoration: underline overline white 1px;
+    text-decoration: overline white 1px;
 }
+.liContainer{ 
+   display: flex;
+}
+.navbar-li{
+    color: antiquewhite;
+    margin: 10px 30px 0px 30px;
+    padding-left: auto;
+    padding-right: auto;
+}
+.navbar-a{
+    text-decoration: none;     
+}
+

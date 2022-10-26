@@ -1,0 +1,42 @@
+.border-container{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    padding-bottom: 10px ;
+    width: 200px;
+    border: solid 1px grey;
+}
+
+.counterNumb{
+    border: solid 1px;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    padding-left: auto;
+    padding-right: auto;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+.grid-container{
+    border-radius: 8px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 40px 30px 40px;
+    justify-content: center;
+    padding-right: auto;
+    padding-left: auto;
+}
+.counterButton {
+    width: 24px;
+    height: 25px;
+    margin: 6px 6px 6px 6px;
+    padding: 2px 2px 2px 2px;
+}
+.addToCartButton{
+    margin-bottom: 5px;
+}
