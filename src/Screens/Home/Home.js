@@ -17,8 +17,7 @@ export function Home() {
 export function ProductsList() {  
   return (
     <div className="ProductsList">
-        {<Cards/>} 
-        
+        <Cards/>        
     </div>   
   );
 }

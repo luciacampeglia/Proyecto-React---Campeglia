@@ -1,43 +1,75 @@
-import products from "../Products/Products"
+import products, { productsApi } from "../Products/productsApi"
 import './Cards.css'
 import ProductsCounter from "../ProductCounter/ProductCounter" 
 import DetailCard from "../ProductDetail/ProductDetail"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {Link} from "react-router-dom"
 
 
-export const productsApi = async () => {
-  const url = '../Products/Products'
-  const resp = await fetch(url);
-  const data = await resp.json();
 
-  const productos = data.map((product) =>({
-    product: product.produc,
-    imgage: product.image,
-    price: product.price
-  }))
-  console.log(productos);
-  return productos
-}
 const Cards = () =>{
   const [filter, setFilter] = useState("");
-  return(            
-<div className='cards-container'>
+  const [products, setProducts] = useState([])
+
+  const getImages = async () => {
+    const products = await productsApi();
+    setProducts(products)
+  };
+  useEffect(()=>{
+    getImages();
+  }, []);
+
+  return(
+    <div className="principalContainer">
+    <div className="filterInput">
+      <input 
+      id="filter-input" 
+      className="form-control me-2" 
+      type="text" 
+      placeholder="Filtrar" 
+      value={filter}
+      onChange={(event)=> setFilter (event.target.value)}/>
+    </div>
+    
+    <div className="cards-container">
+      {products
+        .filter((product) => product.product.includes(filter))
+        .map((product,i) => (
+          <Cards
+          key={i}
+          product= {product.product}
+          image = {product.image}
+          price = {product.price}
+          />
+        ))}
+
+    </div>
+    </div>
+  )
+
+  }
+
+
+
+
+
+  /* return(            
+<div className='cards-container'> */
   {/* <Link className="productsA" to="link-products"> */}  
-{products.filter(f => f.product.includes(filter)).map((product, i) => (
+/* {products.filter(f => f.product.includes(filter)).map((product, i) => (
   <div key={i} className='card'>
-    <h4>{product.product}</h4>
+    <h4 className="info-product">{product.product}</h4>
     <img className='img-product' src={product.image} alt='productos'/>
-    <h6 >${product.price}</h6>
-    <ProductsCounter/> 
+    <h6 className="info-product">${product.price}</h6>
+    <ProductsCounter/>  */
     {/* <DetailCard/> */}
-  </div>
-))}
+ /*  </div>
+))} */
 {/* </Link> */}
-</div>  
+/* </div>  
   );
 }
-
+ */
 /* export const FilterInput = () =>{
   const [filter, setFilter] = useState(""); 
   return(

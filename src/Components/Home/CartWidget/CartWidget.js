@@ -2,7 +2,7 @@
 
 const CartLogo = () =>{
     return(            
-    <img id="logoCart" src="../../../public/imagenes/shoppingCart.png" alt="logo-carrito"/>
+    <img id="logoCart" src="../imagenes/shoppingCart.png" alt="logo-carrito"/>
     
     );
 }
