@@ -1,4 +1,4 @@
-import products, { getData } from "../Products/Products"
+import {getData} from '../Products/Products'
 import './Cards.css'
 import ProductsCounter from "../ProductCounter/ProductCounter" 
 import DetailCard from "../ProductDetail/ProductDetail"
@@ -10,14 +10,15 @@ import {Link} from "react-router-dom"
 const Cards = () =>{
   const [filter, setFilter] = useState("");
   const [products, setProducts] = useState([])
-
-  const getImages = async () => {
-    const products = await getData();
+  
+  getData()
+  .then((prod) => {
     setProducts(products)
-  };
-  useEffect(()=>{
-    getImages();
-  }, []);
+      console.log(prod);
+  })
+  .catch((err) => {
+      console.log(err.message);
+  });
 
   return(
     <div className="principalContainer">

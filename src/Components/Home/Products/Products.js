@@ -80,14 +80,6 @@ export function getData(){
     )
     })
 }
-getData()
-    .then(
-        prod => {console.log(prod)}
-    )
-    .catch(
-        err => {console.log(err.message)}
-    );
-
 
 
 export default products;
