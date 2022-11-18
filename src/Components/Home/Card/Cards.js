@@ -1,4 +1,4 @@
-import products, { productsApi } from "../Products/productsApi"
+import products, { getData } from "../Products/Products"
 import './Cards.css'
 import ProductsCounter from "../ProductCounter/ProductCounter" 
 import DetailCard from "../ProductDetail/ProductDetail"
@@ -12,7 +12,7 @@ const Cards = () =>{
   const [products, setProducts] = useState([])
 
   const getImages = async () => {
-    const products = await productsApi();
+    const products = await getData();
     setProducts(products)
   };
   useEffect(()=>{
@@ -30,7 +30,6 @@ const Cards = () =>{
       value={filter}
       onChange={(event)=> setFilter (event.target.value)}/>
     </div>
-    
     <div className="cards-container">
       {products
         .filter((product) => product.product.includes(filter))

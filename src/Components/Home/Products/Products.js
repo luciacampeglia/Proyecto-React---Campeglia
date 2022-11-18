@@ -68,7 +68,7 @@ const products = [
     },
 ]
 
-function getData(){
+export function getData(){
     return new Promise ((resolve, reject) =>{
         if (products.length === 0){
             reject(new Error ('La lista está vacía'))
