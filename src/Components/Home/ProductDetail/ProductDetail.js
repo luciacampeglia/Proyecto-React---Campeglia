@@ -1,13 +1,14 @@
-import products from "./Products"
-import App from "../App"
-import swal from "sweetalert"
+import products from "../Products/Products"
+
+
 
 
 function DetailCard () {
-        <App/>
+   
     return(
         
         <div className='detailCardContainer'>  
+        <button>Detalle</button>
         {products.map((product, i) => (
           <div key={i} className='detailCard'>
             <h5>{product.product}</h5>,

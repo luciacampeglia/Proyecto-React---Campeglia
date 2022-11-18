@@ -1,8 +1,9 @@
+
 const products = [
     {
         "id": "SSBL01",
         "product": "Buzo Levis",
-        "image": "../../public/imagenes/buzo-levis.jpg",
+        "image": "../../../imagenes/buzo-levis.jpg",
         "price": "4900",
         "gender": "Hombre Mujer",
         "category": "Buzos",
@@ -13,7 +14,7 @@ const products = [
     {
         "id": "SSRESC",
         "product": "Remera Santa Cruz",
-        "image": "../../public/imagenes/remera-hombre.jpg",
+        "image": "../../../public/imagenes/remera-hombre.jpg",
         "price": "2900",
         "gender": "Hombre",
         "category": "Remeras",
@@ -67,7 +68,36 @@ const products = [
     },
 ]
 
-const dataProducts = () =>{
+function getData(){
+    return new Promise ((resolve, reject) =>{
+        if (products.length === 0){
+            reject(new Error ('La lista está vacía'))
+        }
+    setTimeout(
+        () => {
+            resolve(products);
+        }, 2000
+    )
+    })
+}
+getData()
+    .then(
+        prod => {console.log(prod)}
+    )
+    .catch(
+        err => {console.log(err.message)}
+    );
+
+ 
+/* export const ProductList = async () => {
+    let products = []
+    await fetch ("./Products/Products")
+      .then(response => response.json())
+      .then(data => (products = data));
+      
+      return products;
+  } */
+/* const dataProducts = () =>{
     return new Promise(
         (resolve, reject)=>{
             setTimeout(
@@ -82,6 +112,6 @@ async function fetchProducts(){
     const productsPromise = await dataProducts();
     console.log(productsPromise);
 }
-fetchProducts();
+fetchProducts(); */
 
 export default products;
