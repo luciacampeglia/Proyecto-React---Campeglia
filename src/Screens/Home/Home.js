@@ -1,7 +1,5 @@
 import './Home.css'
 import Cards from '../../Components/Home/Card/Cards';
-import { FilterInput } from '../../Components/Home/Navbar/Filter';
-import { Card } from '../../Components/Home/Card/Cards';
 
 
 
