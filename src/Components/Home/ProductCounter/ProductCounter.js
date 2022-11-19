@@ -1,9 +1,7 @@
 import {useState} from 'react';
 import './ProductCounter.css'
-function ProductsCounter (){
-    
-    const [counter, setCounter] = useState(0);
-    
+function ProductsCounter (){    
+    const [counter, setCounter] = useState(0);    
     const handdleDismiss = () =>{
         if(counter > 0){
         setCounter(counter - 1);

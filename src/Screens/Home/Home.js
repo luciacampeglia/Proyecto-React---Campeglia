@@ -1,6 +1,6 @@
 import './Home.css'
 import Cards from '../../Components/Home/Card/Cards';
-
+import DetailCard from '../../Components/Home/ProductDetail/ProductDetail';
 
 
 export function Home() {
@@ -20,6 +20,13 @@ export function ProductsList() {
   );
 }
 
+export function DetailProd(){
+  return(
+    <>
+    <DetailCard/>
+    </>
+  )
+}
 
 
 

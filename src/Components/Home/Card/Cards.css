@@ -1,12 +1,7 @@
-.card{
-    margin: 5px;
-    border-radius: 12px bold;
-    width: 320px;
-    height: 480px;
-  }
-  
+ 
   .img-product{
-    width: 250px;
+    width: 300px;
+    height: 290px;
     border-radius: 15px;
     background-color: rgb(221, 67, 93);
     margin-left: auto;
@@ -16,13 +11,25 @@
   .info-product{
     text-align: center;
     margin-top: 10px;
+    color: black;
+    text-decoration: none;
   }
   
   .cards-container{
-    display: flex;
+
+    display: inline-block;
     flex-wrap: wrap;
+  }
+  .card{
+    margin: 8px;
+    border-radius: 14px;
+    width: 350px;
+    height: 500px;
   }
  .productsA{
     color: darkslategrey;
     text-decoration: none;
   }
+.filterInput{
+    margin: 10px;
+}

@@ -1,9 +1,9 @@
-
+import {Link} from "react-router-dom"
 
 const CartLogo = () =>{
     return(            
-    <img id="logoCart" src="../imagenes/shoppingCart.png" alt="logo-carrito"/>
-    
+    <Link to={`toCart`}>
+    <img id="logoCart" src="../imagenes/shoppingCart.png" alt="logo-carrito" href="toCart"/></Link> 
     );
 }
 

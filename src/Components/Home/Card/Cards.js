@@ -3,16 +3,19 @@ import {getData} from '../Products/Products'
 import Card from './Card'
 import './Cards.css'
 import React from 'react'
+import {useParams} from "react-router-dom"
 
 import ProductsCounter from "../ProductCounter/ProductCounter" 
 import DetailCard from "../ProductDetail/ProductDetail"
 import {Link} from "react-router-dom"
+import { CartProvider } from "../../../Context/CartContext"
 
 
 
 const Cards = () =>{
   const [filter, setFilter] = useState("");
   const [products, setProducts] = useState([])
+  const {gender} = useParams();
   console.log(products)
   
   getData()
@@ -35,10 +38,30 @@ const Cards = () =>{
         value={filter}
         onChange={(event)=> setFilter (event.target.value)}/>
         </div>
-        <div className='cards-container'>
-        {products.map((product, i) => (
-            <Card key={i} product={product} />
-        ))}
+        
+        <div className="cards-container">
+          <CartProvider>
+        {gender
+          ?products
+            .filter((product) => product.product.includes(filter)) 
+            .filter((product) => product.gender === gender)
+            .map((product, i) => (
+            <Card 
+            id= {i}
+            key={i} 
+            product={product}
+            gender={product.gender} />
+        ))
+          :products
+          .filter((product) => product.product.includes(filter)) 
+          .map((product, i) => (
+          <Card 
+          id= {i}
+          key={i} 
+          product={product}
+          gender={product.gender} />
+      ))}
+        </CartProvider>
         </div>
     </div>
     );

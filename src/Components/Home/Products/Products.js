@@ -5,7 +5,7 @@ const products = [
         "product": "Buzo Levis",
         "image": "../imagenes/buzo-levis.jpg",
         "price": "4900",
-        "gender": "Hombre Mujer",
+        "gender": "Unisex",
         "category": "Buzos",
         "description": "Buzo de algodón unisex",
         "stock": 10,
@@ -81,5 +81,8 @@ export function getData(){
     })
 }
 
+export const getProductById = (id) => {
+    return products[id];
+}
 
 export default products;
